@@ -1,22 +1,22 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import fetchGraphQL from './fetchGraphQL';
+import Topic from './components/Topic';
 
 function App() {
+  const [topics, setTopics] = useState(null);
+  useEffect(() => {
+    fetchGraphQL().then(response => {
+      const data = response.data;
+      setTopics(data);
+    }).catch(error => {
+      console.error(error);
+    });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Topic data={topics} />
       </header>
     </div>
   );

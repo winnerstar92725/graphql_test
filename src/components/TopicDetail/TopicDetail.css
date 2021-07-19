@@ -1,0 +1,9 @@
+.topic_detail_container{
+    border: 1px solid gray;
+    padding: 5px;
+    color: green;
+
+}
+.topic_detail_container .topic_detail_item{
+    display: flex;
+}

@@ -1,5 +1,8 @@
 ### `npm install`
 install node package modules
+
+### `add github api token`
+generate your own token in github account and add it in .env file
 ### `npm start`
 
 Runs the app in the development mode.\
